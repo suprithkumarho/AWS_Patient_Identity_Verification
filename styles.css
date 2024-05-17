@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background: #dedddd;
+    overflow-y: auto;
+}
+
+
+
+.upload-container {
+    text-align: center;
+    background: #dedddd;
+    padding: 20px;  
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.upload-container h2 {
+    margin: 0 0 20px 0;
+}
+
+
+input[type="file"] {
+    margin-right: 10px; 
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4f99e8;
+    color: white;
+    margin-right: 10px; 
+    width: 150px; 
+    height: 50px;
+}
+
+button:hover {
+    background-color: #0039f4;
+}
+
+.camera-container {
+    margin-top: 20px;
+}
+
+#webcam , #canvas{
+    width: 100%;
+    max-width: 450px; 
+    border-radius: 4px;
+    padding-bottom: 15px;
+    align-items: center;
+}
+
+#uploadedImage {
+    display: block;
+    margin: 20px auto; 
+    max-width: 300px;
+    border-radius: 4px;
+    border: 1px solid black;
+    
+}
+
+
+
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.row button {
+    flex: 1; 
+}
+
+.row #imageUpload {
+    border: 2px solid #ccc;  
+    display: block;
+    padding: 8px 10px;  
+    margin-bottom: 10px; 
+    height: 33px;
+    border-radius: 4px;
+    background-color: #999ca0;
+}
+
+
+
+img {
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.column {
+    float: left;
+    width: 50%; 
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+.patient-details-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.patient-details-container table {
+    width: 450px; /* Adjust width as needed, or use a fixed width like 50% */
+    border-collapse: collapse;
+    margin: 0 auto; /* Center the table horizontally */
+}
+
+.patient-details-container table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left; /* Ensure left alignment for text */
+}
+
+#patientDetails {
+    text-align: center; /* Center the container text */
+}
+
+
+
+
+#patientDetails .column {
+    display: inline-block;  
+    vertical-align: top;    
+    width: 50%;             
+    padding: 1%;            
+    box-sizing: border-box; 
+    
+}
+
+#patientDetails {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%; 
+    margin-top: 20px; 
+    padding: 20px; 
+    
+}
+
+
+
+
+#visitDetails {
+    width: 100%; 
+    margin-top: 20px; 
+    padding: 20px; 
+    display: none;
+}
+
+#visitDetails h2 {
+    margin-bottom: 10px; 
+}
+
+
+#visitDetails table {
+    width: 100%; 
+    border-collapse: collapse; 
+    border: 1px solid #ccc; 
+}
+
+#visitDetails th, #visitDetails td {
+    border: 1px solid #ccc; 
+    padding: 8px;
+    text-align: left; 
+}
+
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    z-index: 1;
+    width:50px;
+    height: 50px;
+    margin: -76px 0 0 -76px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #2773ec;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  

@@ -1,0 +1,64 @@
+{
+  "Patient_details": {
+    "patient_id": {
+      "S": "Tom-Cruise"
+    },
+    "name": {
+      "S": "Tom Cruise"
+    },
+    "phone_number": {
+      "S": "9112345679"
+    },
+    "gender": {
+      "S": "Male"
+    },
+    "age": {
+      "N": "59"
+    },
+    "address": {
+      "S": "456 Hollywood Blvd, Los Angeles, CA"
+    },
+    "emergency_contact": {
+      "S": "9876543211"
+    },
+    "blood_group": {
+      "S": "A-"
+    }
+  },
+  "visit_details": {
+    "visit_id": {
+      "S": "Visit011"
+    },
+    "patient_id": {
+      "S": "Tom-Cruise"
+    },
+    "Hospital_Name": {
+      "S": "Hospital in Illinois"
+    },
+    "Date_of_Visit": {
+      "S": "2020-12-20"
+    },
+    "Doctor_Name": {
+      "S": "Dr. Taylor Jones"
+    },
+    "Reason_for_visit": {
+      "S": "New Symptoms"
+    },
+    "Blood_Pressure_Level": {
+      "S": "98/74 mm Hg"
+    },
+    "Blood_Sugar_Level": {
+      "S": "84 mg/dL"
+    },
+    "Medications_Prescribed": {
+      "S": "Omeprazole"
+    },
+    "Doctor_Comments": {
+      "S": "Comments for new symptoms"
+    },
+    "report_url": {
+      "S": "https://suprith-face-security-system.s3.amazonaws.com/visit-reports/Visit011.pdf"
+    },
+    "report_comments": "Patient advised to exercise"
+  }
+}

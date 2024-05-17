@@ -1,0 +1,64 @@
+{
+  "Patient_details": {
+    "patient_id": {
+      "S": "Shahrukh-Khan"
+    },
+    "name": {
+      "S": "Shahrukh Khan"
+    },
+    "phone_number": {
+      "S": "9447853612"
+    },
+    "age": {
+      "N": "58"
+    },
+    "gender": {
+      "S": "Male"
+    },
+    "address": {
+      "S": "Mannat, Lands End, Bandstand, Bandra (West), Mumbai, Maharashtra - 400050"
+    },
+    "emergency_contact": {
+      "S": "9876543210"
+    },
+    "blood_group": {
+      "S": "O+"
+    }
+  },
+  "visit_details": {
+    "visit_id": {
+      "S": "Visit006"
+    },
+    "patient_id": {
+      "S": "Shahrukh-Khan"
+    },
+    "Hospital_Name": {
+      "S": "Hospital in Michigan"
+    },
+    "Date_of_Visit": {
+      "S": "2017-12-09"
+    },
+    "Doctor_Name": {
+      "S": "Dr. Pat Smith"
+    },
+    "Reason_for_visit": {
+      "S": "Blood Pressure Check"
+    },
+    "Blood_Pressure_Level": {
+      "S": "138/80 mm Hg"
+    },
+    "Blood_Sugar_Level": {
+      "S": "79 mg/dL"
+    },
+    "Medications_Prescribed": {
+      "S": "Levothyroxine"
+    },
+    "Doctor_Comments": {
+      "S": "Comments for blood pressure check"
+    },
+    "report_url": {
+      "S": "https://suprith-face-security-system.s3.amazonaws.com/visit-reports/Visit006.pdf"
+    },
+    "report_comments": "Patient advised to exercise"
+  }
+}

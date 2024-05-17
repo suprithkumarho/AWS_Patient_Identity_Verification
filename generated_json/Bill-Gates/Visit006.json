@@ -1,0 +1,64 @@
+{
+  "Patient_details": {
+    "patient_id": {
+      "S": "Bill-Gates"
+    },
+    "name": {
+      "S": "Bill Gates"
+    },
+    "phone_number": {
+      "S": "9112345680"
+    },
+    "gender": {
+      "S": "Male"
+    },
+    "age": {
+      "N": "65"
+    },
+    "address": {
+      "S": "789 Microsoft Way, Redmond, WA"
+    },
+    "emergency_contact": {
+      "S": "9876543212"
+    },
+    "blood_group": {
+      "S": "B-"
+    }
+  },
+  "visit_details": {
+    "visit_id": {
+      "S": "Visit006"
+    },
+    "patient_id": {
+      "S": "Bill-Gates"
+    },
+    "Hospital_Name": {
+      "S": "Hospital in California"
+    },
+    "Date_of_Visit": {
+      "S": "2024-04-26"
+    },
+    "Doctor_Name": {
+      "S": "Dr. John Brown"
+    },
+    "Reason_for_visit": {
+      "S": "Eye Check up"
+    },
+    "Blood_Pressure_Level": {
+      "S": "108/68 mm Hg"
+    },
+    "Blood_Sugar_Level": {
+      "S": "116 mg/dL"
+    },
+    "Medications_Prescribed": {
+      "S": "Losartan"
+    },
+    "Doctor_Comments": {
+      "S": "Comments for eye check up"
+    },
+    "report_url": {
+      "S": "https://suprith-face-security-system.s3.amazonaws.com/visit-reports/Visit006.pdf"
+    },
+    "report_comments": "Patient advised to follow-up"
+  }
+}

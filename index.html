@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Access System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Patient Identity Verification</h1>
+        <div class="row">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button onclick="uploadImage()">Upload and Check Access</button>
+        </div>
+        <div class="row">
+            <button id="startCamera">Click a Picture</button>
+            <button id="submit" disabled>Submit Picture</button>
+            
+        </div>
+        <div class="camera-container">
+            <video id="webcam" autoplay style="display: none;"></video>
+            <button id="capture" style="display: none;">Capture Photo</button>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <div id="loader" style="display: none;"></div>
+        </div>
+        <button id="retakePhoto" style="display: none;">Retake Photo</button>
+        <button id="reset" onclick="resetPage()" style="background-color: red;">Reset</button>
+        <img id="uploadedImage" src="" alt="Uploaded Image" style="max-width: 300px; display: none;">
+        <p id="response"></p>
+        <div id="patientDetails" style="display: none;">
+            <h2>Patient Details:</h2>
+            <div class="patient-details-container">
+                <table>
+                    <tbody id="patientDetailsTable"></tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div id="visitDetails" style="display: none;">
+            <h2>Visits:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date of Visit</th>
+                        <th>Hospital Name</th>
+                        <th>Doctor Name</th>
+                        <th>Blood Sugar Level</th>
+                        <th>Blood Pressure Level</th>
+                        <th>Reason for Visit</th>
+                        <th>Medications Prescribed</th>
+                        <th>Doctor Comments</th>
+                        <th>Report</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

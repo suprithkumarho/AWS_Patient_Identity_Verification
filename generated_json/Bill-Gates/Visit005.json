@@ -1,0 +1,64 @@
+{
+  "Patient_details": {
+    "patient_id": {
+      "S": "Bill-Gates"
+    },
+    "name": {
+      "S": "Bill Gates"
+    },
+    "phone_number": {
+      "S": "9112345680"
+    },
+    "gender": {
+      "S": "Male"
+    },
+    "age": {
+      "N": "65"
+    },
+    "address": {
+      "S": "789 Microsoft Way, Redmond, WA"
+    },
+    "emergency_contact": {
+      "S": "9876543212"
+    },
+    "blood_group": {
+      "S": "B-"
+    }
+  },
+  "visit_details": {
+    "visit_id": {
+      "S": "Visit005"
+    },
+    "patient_id": {
+      "S": "Bill-Gates"
+    },
+    "Hospital_Name": {
+      "S": "Hospital in Illinois"
+    },
+    "Date_of_Visit": {
+      "S": "2018-09-27"
+    },
+    "Doctor_Name": {
+      "S": "Dr. Chris Jones"
+    },
+    "Reason_for_visit": {
+      "S": "Body Ache"
+    },
+    "Blood_Pressure_Level": {
+      "S": "122/77 mm Hg"
+    },
+    "Blood_Sugar_Level": {
+      "S": "119 mg/dL"
+    },
+    "Medications_Prescribed": {
+      "S": "Anvil"
+    },
+    "Doctor_Comments": {
+      "S": "Comments for body ache"
+    },
+    "report_url": {
+      "S": "https://suprith-face-security-system.s3.amazonaws.com/visit-reports/Visit005.pdf"
+    },
+    "report_comments": "Patient advised to take medications regularly"
+  }
+}

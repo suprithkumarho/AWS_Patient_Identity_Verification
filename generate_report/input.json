@@ -1,0 +1,61 @@
+{
+    "Patient_details": {
+      "patient_id": {
+        "S": "Shahrukh-Khan"
+      },
+      "name": {
+        "S": "Shahrukh Khan"
+      },
+      "phone_number": {
+        "S": "9447853612"
+      },
+      "age": {
+        "N": "58"
+      },
+      "address": {
+        "S": "Mannat, Lands End, Bandstand, Bandra (West), Mumbai, Maharashtra - 400050"
+      },
+      "emergency_contact": {
+        "S": "9876543210"
+      },
+      "blood_group": {
+        "S": "O+"
+      }
+    },
+    "visit_details": {
+      "visit_id": {
+        "S": "Visit001"
+      },
+      "patient_id": {
+        "S": "Shahrukh-Khan"
+      },
+      "Hospital_Name": {
+        "S": "Apollo Hospital"
+      },
+      "Date_of_Visit": {
+        "S": "2023-12-01"
+      },
+      "Doctor_Name": {
+        "S": "Dr. Anil Kumar"
+      },
+      "Reason_for_visit": {
+        "S": "Annual Checkup"
+      },
+      "Blood_Pressure_Level": {
+        "S": "80/65 mm Hg"
+      },
+      "Blood_Sugar_Level": {
+        "S": "126 mg/dL"
+      },
+      "Medications_Prescribed": {
+        "S": "Vitamin D Supplements"
+      },
+      "Doctor_Comments": {
+        "S": "Recommended diet changes"
+      },
+      "report_url": {
+        "S": "https://suprith-face-security-system.s3.amazonaws.com/visit-reports/Visit001.pdf"
+      },
+      "report_comments": "need rest"
+    }
+  }

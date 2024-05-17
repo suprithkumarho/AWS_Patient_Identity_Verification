@@ -1,0 +1,306 @@
+1. list  externalimageid that have been already created in AWS.
+Command : aws rekognition list-faces --collection-id "known-faces" --region us-east-1 --query 'Faces[].FaceId' --output text
+output : 
+            ef82e5a9-d443-476c-b557-b1836eb021c4
+            b474330f-db94-4692-a8ba-35c3c770f326
+            ad1fa56a-a5b6-4302-a2a1-230eb08402e7
+            ec6edde9-1162-47e8-9184-19dc86499c52
+            d1adc73c-0705-42d4-b798-e361a3d51f5b
+
+2. To delete all the externalImageId so as to un-train the model
+Command : aws rekognition delete-faces --collection-id "known-faces" --region us-east-1 --face-ids 'ef82e5a9-d443-476c-b557-b1836eb021c4' 'b474330f-db94-4692-a8ba-35c3c770f326' 'ad1fa56a-a5b6-4302-a2a1-230eb08402e7' 'ec6edde9-1162-47e8-9184-19dc86499c52' 'd1adc73c-0705-42d4-b798-e361a3d51f5b'
+output :
+            {
+                "DeletedFaces": [
+                    'ef82e5a9-d443-476c-b557-b1836eb021c4',
+                    'b474330f-db94-4692-a8ba-35c3c770f326',
+                    'ad1fa56a-a5b6-4302-a2a1-230eb08402e7',
+                    'ec6edde9-1162-47e8-9184-19dc86499c52',
+                    'd1adc73c-0705-42d4-b798-e361a3d51f5b'
+                ],
+                "UnsuccessfulFaceDeletions": []
+            }
+
+3. To train the model with the image, save the image in the s3 bucket witht the filename same as the externalImageId you want to set. Run the below command.
+Before executing below command. Create a image.json file in the path the below command is being executed.
+            image.json
+                {
+                    "S3Object": {
+                        "Bucket": "<Bucket_Name>",
+                        "Name": "<Path_To_Image_Needed_To_Be_Trained>"
+                    }
+                }
+
+Command : 
+            aws rekognition index-faces --collection-id "<collection-id>" --image file://<image-file-path> --external-image-id "<external-image-id>" --region <aws-region> --detection-attributes "ALL" > <output-file>
+
+Output : A long json idetifiying all the features and training the AWS Model.
+        {
+            "FaceRecords": [
+                {
+                    "Face": {
+                        "FaceId": "47fc24bd-81da-4f12-aae7-7ef1bbf98c40",
+                        "BoundingBox": {
+                            "Width": 0.4072416126728058,
+                            "Height": 0.5693849325180054,
+                            "Left": 0.29956650733947754,
+                            "Top": 0.25159159302711487
+                        },
+                        "ImageId": "10416628-405d-3517-8d74-51d46348863c",
+                        "ExternalImageId": "Amir-Khan",
+                        "Confidence": 99.99983215332031
+                    },
+                    "FaceDetail": {
+                        "BoundingBox": {
+                            "Width": 0.4072416126728058,
+                            "Height": 0.5693849325180054,
+                            "Left": 0.29956650733947754,
+                            "Top": 0.25159159302711487
+                        },
+                        "AgeRange": {
+                            "Low": 31,
+                            "High": 39
+                        },
+                        "Smile": {
+                            "Value": false,
+                            "Confidence": 99.99512481689453
+                        },
+                        "Eyeglasses": {
+                            "Value": false,
+                            "Confidence": 99.917724609375
+                        },
+                        "Sunglasses": {
+                            "Value": false,
+                            "Confidence": 100.0
+                        },
+                        "Gender": {
+                            "Value": "Male",
+                            "Confidence": 99.98845672607422
+                        },
+                        "Beard": {
+                            "Value": false,
+                            "Confidence": 62.673973083496094
+                        },
+                        "Mustache": {
+                            "Value": false,
+                            "Confidence": 99.64472961425781
+                        },
+                        "EyesOpen": {
+                            "Value": true,
+                            "Confidence": 98.49848175048828
+                        },
+                        "MouthOpen": {
+                            "Value": false,
+                            "Confidence": 99.72980499267578
+                        },
+                        "Emotions": [
+                            {
+                                "Type": "CALM",
+                                "Confidence": 93.1640625
+                            },
+                            {
+                                "Type": "ANGRY",
+                                "Confidence": 2.740478515625
+                            },
+                            {
+                                "Type": "SAD",
+                                "Confidence": 0.550079345703125
+                            },
+                            {
+                                "Type": "CONFUSED",
+                                "Confidence": 0.0675201416015625
+                            },
+                            {
+                                "Type": "SURPRISED",
+                                "Confidence": 0.002816319465637207
+                            },
+                            {
+                                "Type": "DISGUSTED",
+                                "Confidence": 5.9604644775390625e-05
+                            },
+                            {
+                                "Type": "FEAR",
+                                "Confidence": 0.0
+                            },
+                            {
+                                "Type": "HAPPY",
+                                "Confidence": 0.0
+                            }
+                        ],
+                        "Landmarks": [
+                            {
+                                "Type": "eyeLeft",
+                                "X": 0.3862323760986328,
+                                "Y": 0.49198609590530396
+                            },
+                            {
+                                "Type": "eyeRight",
+                                "X": 0.5666585564613342,
+                                "Y": 0.4834425151348114
+                            },
+                            {
+                                "Type": "mouthLeft",
+                                "X": 0.4126916527748108,
+                                "Y": 0.6947293281555176
+                            },
+                            {
+                                "Type": "mouthRight",
+                                "X": 0.5632126927375793,
+                                "Y": 0.6879844665527344
+                            },
+                            {
+                                "Type": "nose",
+                                "X": 0.4628259837627411,
+                                "Y": 0.6094616055488586
+                            },
+                            {
+                                "Type": "leftEyeBrowLeft",
+                                "X": 0.323009192943573,
+                                "Y": 0.44374924898147583
+                            },
+                            {
+                                "Type": "leftEyeBrowRight",
+                                "X": 0.4135056138038635,
+                                "Y": 0.43489721417427063
+                            },
+                            {
+                                "Type": "leftEyeBrowUp",
+                                "X": 0.36402714252471924,
+                                "Y": 0.4244540333747864
+                            },
+                            {
+                                "Type": "rightEyeBrowLeft",
+                                "X": 0.5170100331306458,
+                                "Y": 0.42950066924095154
+                            },
+                            {
+                                "Type": "rightEyeBrowRight",
+                                "X": 0.6373206377029419,
+                                "Y": 0.42827603220939636
+                            },
+                            {
+                                "Type": "rightEyeBrowUp",
+                                "X": 0.5726075172424316,
+                                "Y": 0.41381099820137024
+                            },
+                            {
+                                "Type": "leftEyeLeft",
+                                "X": 0.35629215836524963,
+                                "Y": 0.4908570349216461
+                            },
+                            {
+                                "Type": "leftEyeRight",
+                                "X": 0.4220580458641052,
+                                "Y": 0.4920760691165924
+                            },
+                            {
+                                "Type": "leftEyeUp",
+                                "X": 0.3839460015296936,
+                                "Y": 0.4824828803539276
+                            },
+                            {
+                                "Type": "leftEyeDown",
+                                "X": 0.3872933089733124,
+                                "Y": 0.5008181929588318
+                            },
+                            {
+                                "Type": "rightEyeLeft",
+                                "X": 0.5310088992118835,
+                                "Y": 0.4868268072605133
+                            },
+                            {
+                                "Type": "rightEyeRight",
+                                "X": 0.6011887192726135,
+                                "Y": 0.4791993200778961
+                            },
+                            {
+                                "Type": "rightEyeUp",
+                                "X": 0.5652477145195007,
+                                "Y": 0.47375616431236267
+                            },
+                            {
+                                "Type": "rightEyeDown",
+                                "X": 0.5662373900413513,
+                                "Y": 0.49233949184417725
+                            },
+                            {
+                                "Type": "noseLeft",
+                                "X": 0.44201943278312683,
+                                "Y": 0.624086856842041
+                            },
+                            {
+                                "Type": "noseRight",
+                                "X": 0.5092412829399109,
+                                "Y": 0.6208702325820923
+                            },
+                            {
+                                "Type": "mouthUp",
+                                "X": 0.4767315089702606,
+                                "Y": 0.6716070771217346
+                            },
+                            {
+                                "Type": "mouthDown",
+                                "X": 0.4830477237701416,
+                                "Y": 0.730303168296814
+                            },
+                            {
+                                "Type": "leftPupil",
+                                "X": 0.3862323760986328,
+                                "Y": 0.49198609590530396
+                            },
+                            {
+                                "Type": "rightPupil",
+                                "X": 0.5666585564613342,
+                                "Y": 0.4834425151348114
+                            },
+                            {
+                                "Type": "upperJawlineLeft",
+                                "X": 0.3092946708202362,
+                                "Y": 0.47999998927116394
+                            },
+                            {
+                                "Type": "midJawlineLeft",
+                                "X": 0.35492977499961853,
+                                "Y": 0.6975102424621582
+                            },
+                            {
+                                "Type": "chinBottom",
+                                "X": 0.4979099631309509,
+                                "Y": 0.8280367851257324
+                            },
+                            {
+                                "Type": "midJawlineRight",
+                                "X": 0.676623523235321,
+                                "Y": 0.6818370223045349
+                            },
+                            {
+                                "Type": "upperJawlineRight",
+                                "X": 0.704364538192749,
+                                "Y": 0.46020737290382385
+                            }
+                        ],
+                        "Pose": {
+                            "Roll": -4.098238468170166,
+                            "Yaw": -7.090569972991943,
+                            "Pitch": -2.233797550201416
+                        },
+                        "Quality": {
+                            "Brightness": 80.26923370361328,
+                            "Sharpness": 94.08262634277344
+                        },
+                        "Confidence": 99.99983215332031,
+                        "FaceOccluded": {
+                            "Value": false,
+                            "Confidence": 99.90914916992188
+                        },
+                        "EyeDirection": {
+                            "Yaw": 1.3153210878372192,
+                            "Pitch": -5.347182750701904,
+                            "Confidence": 99.99061584472656
+                        }
+                    }
+                }
+            ],
+            "FaceModelVersion": "7.0",
+            "UnindexedFaces": []
+        }

@@ -1,0 +1,64 @@
+{
+  "Patient_details": {
+    "patient_id": {
+      "S": "Bill-Gates"
+    },
+    "name": {
+      "S": "Bill Gates"
+    },
+    "phone_number": {
+      "S": "9112345680"
+    },
+    "gender": {
+      "S": "Male"
+    },
+    "age": {
+      "N": "65"
+    },
+    "address": {
+      "S": "789 Microsoft Way, Redmond, WA"
+    },
+    "emergency_contact": {
+      "S": "9876543212"
+    },
+    "blood_group": {
+      "S": "B-"
+    }
+  },
+  "visit_details": {
+    "visit_id": {
+      "S": "Visit003"
+    },
+    "patient_id": {
+      "S": "Bill-Gates"
+    },
+    "Hospital_Name": {
+      "S": "Hospital in Ohio"
+    },
+    "Date_of_Visit": {
+      "S": "2018-03-12"
+    },
+    "Doctor_Name": {
+      "S": "Dr. Jane Johnson"
+    },
+    "Reason_for_visit": {
+      "S": "Diabetes Management"
+    },
+    "Blood_Pressure_Level": {
+      "S": "127/75 mm Hg"
+    },
+    "Blood_Sugar_Level": {
+      "S": "117 mg/dL"
+    },
+    "Medications_Prescribed": {
+      "S": "Amlodipine"
+    },
+    "Doctor_Comments": {
+      "S": "Comments for diabetes management"
+    },
+    "report_url": {
+      "S": "https://suprith-face-security-system.s3.amazonaws.com/visit-reports/Visit003.pdf"
+    },
+    "report_comments": "Patient advised to take medications regularly"
+  }
+}
